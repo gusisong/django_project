@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% for article in articles %}
-    <p>{{ article.title }}</p>
-{% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    首页
+{% endblock %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+    <div class="container">
+        <div class="row mt-2">
+    
+        </div>
+    </div>
+{% endblock %}
