@@ -13,6 +13,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'article:article_list' %}">文章列表</a>
                 </li>
+                {% if user.is_authenticated %}
+                    <!-- 如果用户已经登录，则显示用户名下拉框 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="tree" aria-expanded="false">
+                            {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">退出登录</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <!-- 如果用户未登录，则显示 “登录” -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'userprofile:login' %}">登录</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
 
